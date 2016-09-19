@@ -15,7 +15,7 @@ describe 'schedule messages' do
     end
 
     it 'responds with success message' do
-      expect(JSON.parse(schedule_messages.body)).to eq(
+      expect(schedule_messages.body).to eq(
           'message' => 'success'
         )
     end

@@ -6,7 +6,7 @@ describe 'export users' do
 
     context 'with success', :vcr do
       it 'responds with created' do
-        expect(export_users).to be_success
+        expect(export_users.status).to eq(201)
       end
     end
   end
@@ -20,7 +20,7 @@ describe 'export users' do
       end
 
       it 'responds with created' do
-        expect(export_users).to be_success
+        expect(export_users.status).to eq(201)
       end
     end
   end

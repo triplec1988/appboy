@@ -16,7 +16,7 @@ describe 'track users' do
     end
 
     it 'responds with success message' do
-      expect(JSON.parse(track_users.body)).to eq(
+      expect(track_users.body).to eq(
           'attributes_processed' => 1,
           'events_processed' => 1,
           'purchases_processed' => 1,

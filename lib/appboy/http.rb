@@ -1,16 +1,21 @@
 require 'faraday'
 require 'faraday_middleware'
+require 'appboy/response'
 
 module Appboy
   class HTTP
     def post(path, payload)
-      connection.post path do |request|
+      response = connection.post path do |request|
         request.body = payload
       end
+
+      Appboy::Response.new(response)
     end
 
     def get(path, query)
-      connection.get path, query
+      response = connection.get path, query
+
+      Appboy::Response.new(response)
     end
 
     def connection

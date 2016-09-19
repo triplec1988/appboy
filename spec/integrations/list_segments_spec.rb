@@ -5,7 +5,7 @@ describe 'list segments' do
 
   context 'with success', :vcr do
     it 'responds with success' do
-      expect(list_segments).to be_success
+      expect(list_segments.status).to eq(200)
     end
 
     it 'responds with a list of segments' do
@@ -15,7 +15,7 @@ describe 'list segments' do
     end
 
     def segments
-      JSON.parse(list_segments.body)['segments']
+      list_segments.body['segments']
     end
   end
 end

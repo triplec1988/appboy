@@ -14,7 +14,7 @@ describe 'send messages' do
     end
 
     it 'responds with success message' do
-      expect(JSON.parse(send_messages.body)).to eq(
+      expect(send_messages.body).to eq(
           'message' => 'success'
         )
     end
